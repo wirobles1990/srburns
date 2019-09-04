@@ -1,0 +1,80 @@
+.header {
+    height: 65px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: #ffffff;
+
+    &.active {
+        background-color: transparent;
+    }
+
+    &__logo {
+        margin: 10px 0 0 15px;
+        width: 110px;
+        height: 53px;
+        overflow: hidden;
+        display: block;
+        float: left;
+        background-image: url('../img/srburns-logo-fondo.png');
+        background-repeat: no-repeat;
+        background-size: 238px;
+        background-position: -127px center;
+        position: relative;
+        z-index: 2;
+        @include bounce(all 500ms 0s);
+        
+        &.active {
+            background-position: 0 center;
+        }
+    }
+
+    .icon {
+        float: right;
+        width: 30px;
+        height: 30px;        
+        border-radius: 15px;
+        color: #ffffff;
+        background-color: #000000;
+        font-size: 15px;
+        text-align: center;
+        line-height: 30px;
+        margin: 15px 20px 0 0;
+        display: none;
+        position: relative;
+        z-index: 2;
+        @include transition(all 500ms ease 0s);
+        @include nodraggable();
+
+        &:hover {
+            color: #000000;
+            background-color: #ffffff;
+        }
+
+        @media (min-width: 768px) {
+            display: block;
+        }
+    }
+
+    &__menu-boton {
+        display: inline-block;
+        width: 65px;
+        height: 65px;
+        background-color: #000000;
+        text-align: center;
+        float: right;
+        position: relative;
+        z-index: 2;
+        background-image: url('../img/icon-menu.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 40px;
+        @include transition(all 200ms ease 0s);
+        
+        &.active {
+            background-image: url('../img/icon-menu-close.png');
+        }
+    }
+}

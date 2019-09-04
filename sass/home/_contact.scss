@@ -1,0 +1,217 @@
+.main-container {
+    &__contact {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        text-align: center;          
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-position-x: 40%;
+        background-image: url('../img/contacto-fondo.jpg');
+
+        img {
+            margin-top: 25px;
+            display: inline-block;
+            @include nodraggable();
+
+            @media (min-width: 1024px) {
+                width: 230px;
+            }
+        }
+
+        form {
+            margin: 15px auto;
+            width: 250px;
+
+            div {
+                position: relative;
+            }
+
+            input {
+                width: 100%;
+                display: block;
+                height: 40px;            
+                line-height: 40px;
+                margin: 15px auto 22px;
+                border: 2px solid transparent;
+                background-color: rgba(255,255,255, 0.7);
+                border-radius: 15px;
+                padding: 0 15px;
+                font-size: 11px;
+                color: #000000;
+                @include transition(all 500ms ease 0s);
+
+                &:hover,
+                &:focus {
+                    border: 2px solid #77BDF1;
+                }
+
+                &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: #010103;
+                    font-style: italic;
+                    opacity: 1; /* Firefox */
+                    font-size: 12px;
+                }
+                &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                    color: #010103;
+                    font-style: italic;
+                    font-size: 12px;
+                }
+                &::-ms-input-placeholder { /* Microsoft Edge */
+                    color: #010103;
+                    font-style: italic;
+                    font-size: 12px;
+                }    
+
+            }
+
+            label.error {
+                bottom: -13px;
+                opacity: 1;
+                left: 0;
+                color: white;
+                font-size: 10px;
+                line-height: 10px;
+                position: absolute;
+                font-style: italic;
+                border-radius: 7px;
+                padding: 4px 7px;
+                background-color: #b63f43;
+                @include bounce-arrow(bounce 3s);
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -4px;
+                    left: 10px;
+                    width: 0;
+                    height: 0;
+                    border-width: 0 5px 5px;
+                    border-style: solid;
+                    border-color: transparent transparent #b63f43;
+                }
+            }
+
+            button {
+                font-weight: 700;
+                text-align: center;
+                border: none;
+                width: 150px;
+                height: 40px;
+                line-height: 35px;
+                border-radius: 20px;
+                margin-top: 15px;
+                cursor: pointer;
+                background-color: #42bef2;
+                @include transition(all 500ms ease 0s);
+
+                .text {
+                    display: inline-block;
+                    vertical-align: middle;
+                    color: #000000;
+                    text-transform: uppercase;
+                    margin-right: 4px;
+                    @include transition(all 500ms ease 0s);
+                }
+
+                .icon {
+                    display: inline-block;
+                    vertical-align: middle;
+                    color: #000000;
+                    font-size: 20px;
+                    @include transition(all 500ms ease 0s);
+                }
+
+                &:hover {
+                    background-color: #000000;
+                    span {
+                        color: #ffffff;
+                    }                        
+                }
+            }
+        }    
+        
+        @media (min-width: 768px) {
+            background-position-x: center;
+
+            &__container__fondo {
+                position: absolute;
+                right: 0;
+                left: 0;
+                top: 15%;
+                bottom: 0;
+                margin: auto;
+
+                form {
+                    width: 600px;
+                    margin: 21px auto;
+    
+                    div {
+                        display: inline-block;
+                        width: 260px;
+                        height: 40px;
+                        margin: 15px;
+    
+                        input {
+                            margin:0;
+                            width: 100%;
+                            height: 100%;
+    
+                            &.error {
+                                margin: 0;
+                            }
+                        }
+    
+                        label.error {
+                            left: 0;
+                            bottom: -13px;
+                            top: unset;
+                            right: unset;
+                            display: block;
+                            position: absolute;
+                        }
+                    }
+    
+                }
+            }
+
+        }
+
+        @media (min-width: 1024px) {
+            &__container__fondo {
+
+                top:30%;
+
+                div {
+                    width: 265px !important;
+                }
+
+                img,
+                form {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                
+                form {
+                    width: 700px;
+                }
+
+                img {
+                    margin-top: -14px;
+                }
+            }
+
+        }    
+
+        @media (min-width: 1280px) {
+            &__container__fondo {
+
+                div {
+                    width: 300px !important;
+                }
+            }
+        }
+        
+    }
+}
