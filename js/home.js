@@ -22,7 +22,6 @@ $(document).ready(function(){
 
     window.addEventListener('resize', function () {
         setBodyHeight()
-        //unloadSliders()
     })
 })
 
@@ -92,6 +91,15 @@ function loadSliders () {
                     autoplay: false,
                     dots: true,
                 }
+            },
+            {
+                breakpoint: 1365,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    autoplay: false,
+                    dots: true,
+                }
             }
         ]
     })
@@ -143,53 +151,51 @@ function loadSliders () {
 function unloadSliders () {
     if ( document.body.clientWidth >= 1024 ) {
         $('.main-container__projects__tabs').slick('unslick');
-        $('.main-container__brands__slider').slick('unslick');
         $('.main-container__what-we-do__slider').slick('unslick');
     }
 }
 
 function randomPhotos () {
     let min = 1,
-        max = 4,
-        minOpacity = 1,
-        maxOpacity
+        max = 4,        
+        index = 1,
+        maxLoop = 0
 
-    if ( screen.width < 768 ) {
-        maxOpacity = 9
+    if ( document.body.clientWidth < 768 ) {
+        //9 photos to show
+        maxLoop = 9
 
-        setInterval(function(){
-            $('.main-container__our-team__photos > div').css('opacity','1')
-            $('.main-container__our-team__photos > div:nth-child(' + (Math.floor(Math.random() * maxOpacity) + minOpacity) + ')').css('opacity','0')
-            $('.main-container__our-team__photos > div:nth-child(' + (Math.floor(Math.random() * maxOpacity) + minOpacity) + ')').css('opacity','0')
-        }, 3000)
+        $('.main-container__our-team__photos > div:nth-child(7)').css('opacity','0')        
 
-    } else if ( screen.width >= 768 && screen.width <= 1024 ) {
-        maxOpacity = 12
+    } else if ( document.body.clientWidth >= 768 && document.body.clientWidth <= 1024 ) {
+        //12 photos to show
+        maxLoop = 12
+        
+        $('.main-container__our-team__photos > div:nth-child(2)').css('opacity','0')
+        $('.main-container__our-team__photos > div:nth-child(9)').css('opacity','0')
 
-        setInterval(function(){
-            $('.main-container__our-team__photos > div').css('opacity','1')
-            $('.main-container__our-team__photos > div:nth-child(' + (Math.floor(Math.random() * maxOpacity) + minOpacity) + ')').css('opacity','0')
-            $('.main-container__our-team__photos > div:nth-child(' + (Math.floor(Math.random() * maxOpacity) + minOpacity) + ')').css('opacity','0')
-            $('.main-container__our-team__photos > div:nth-child(' + (Math.floor(Math.random() * maxOpacity) + minOpacity) + ')').css('opacity','0')
-        }, 3000)
+    } else if ( document.body.clientWidth > 1024 ) {
+        //40 photos to show
+        maxLoop = 40
 
-    } else if ( screen.width > 1024 ) {
-        maxOpacity = 40
-
-        setInterval(function(){
-            $('.main-container__our-team__photos > div').css('opacity','1')
-            $('.main-container__our-team__photos > div:nth-child(' + (Math.floor(Math.random() * maxOpacity) + minOpacity) + ')').css('opacity','0')
-            $('.main-container__our-team__photos > div:nth-child(' + (Math.floor(Math.random() * maxOpacity) + minOpacity) + ')').css('opacity','0')
-            $('.main-container__our-team__photos > div:nth-child(' + (Math.floor(Math.random() * maxOpacity) + minOpacity) + ')').css('opacity','0')
-            $('.main-container__our-team__photos > div:nth-child(' + (Math.floor(Math.random() * maxOpacity) + minOpacity) + ')').css('opacity','0')
-        }, 3000)
+        $('.main-container__our-team__photos > div:nth-child(2)').css('opacity','0')
+        $('.main-container__our-team__photos > div:nth-child(9)').css('opacity','0')
+        $('.main-container__our-team__photos > div:nth-child(11)').css('opacity','0')
+        $('.main-container__our-team__photos > div:nth-child(24)').css('opacity','0')
+        $('.main-container__our-team__photos > div:nth-child(28)').css('opacity','0')
     }
 
     setInterval(function(){
-        $('.main-container__our-team__photos > div').each(function() {
+        if ( index === maxLoop ) {
+            index = 1
+        }        
+
+        $('.main-container__our-team__photos > div:nth-child(' + index + ')').each(function() {
             $(this).css('background-image','url("./img/team-' + (Math.floor(Math.random() * max) + min) + '.jpg")')
-        })        
-    }, 3000)
+        })
+
+        index++
+    }, 200)
 }
 
 function setBodyHeight () {
@@ -265,9 +271,22 @@ function interactionTabs () {
         $('#' + $(this).attr('detail')).addClass('active')
     })
 
+    // For detail in main slider
+    let header = document.querySelector('header'),
+        header_height = header.clientHeight
+
+    $('.project-description a').click(function() {
+        $('html, body').animate({
+            scrollTop: $('.main-container__projects').offset().top - header_height
+        }, 1000)
+
+        $('.main-container__projects__detail').removeClass('active')            
+        $('#' + $(this).attr('detail')).addClass('active')
+    })
+
     $('.detail-back').click(function() {
         $('.main-container__projects__detail').removeClass('active')
-    })    
+    })
 }
 
 function interactionMenu () {

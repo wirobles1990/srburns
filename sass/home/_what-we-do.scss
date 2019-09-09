@@ -74,7 +74,7 @@
                 @media (min-width: 1024px) {
                     display: block;
                     position: absolute;
-                    bottom: 140px;
+                    top: 240px;
                     right: 0;
                     @include bounce-arrow(bounce 2000ms infinite);
                 }
