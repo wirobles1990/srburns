@@ -10,12 +10,12 @@
         position: relative;    
 
         h3 {
-            font-weight: 400;
             font-style: italic;
-            font-size: 18px;
-            padding-top: 20px;
+            font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-size: 18px;
+            padding-top: 20px;
         }
 
         h2 {
@@ -28,24 +28,20 @@
         @media (min-width: 1024px) {
             h3 {
                 font-size: 25px;
-                margin-top: 15px;
             }
 
             h2 {
                 font-size: 30px;
-                margin-top: 15px;
             }
         }
 
         @media (min-width: 1330px) {
             h3 {
                 font-size: 30px;
-                margin-top: 20px;
             }
 
             h2 {
                 font-size: 35px;
-                margin-top: 20px;
             }
         }
 

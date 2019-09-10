@@ -29,13 +29,14 @@ function interactionMenu () {
         $('.header').toggleClass('active')
     })
 }
-  
+ 
+/*--------------Lettering--------------*/
 function animationLettering(element) {
     setTimeout(function(){
         $(element).lettering()
 
         var tittleMessage = new TimelineMax()
-        tittleMessage.staggerFromTo(".title-sorry-msg span ", 0.5,
+        tittleMessage.staggerFromTo(element + " span", 0.5,
         {ease: Back.easeOut.config(1.7), opacity: 0, bottom: -80},
         {ease: Back.easeOut.config(1.7), opacity: 1, bottom: 0}, 0.05)
     }, 500)

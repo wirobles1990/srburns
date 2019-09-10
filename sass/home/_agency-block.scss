@@ -17,26 +17,76 @@
 
         &__first {
             position: relative;
-
-            & > img {
+            background-color: #ffffff;
+            
+            .keko-rojo {
                 position: absolute;
                 bottom: 45px;
                 right: 0;
+                @include bounce-arrow(bounce 3s infinite);
 
                 @media (min-width: 360px) {
-                    width: 325px;
+                    width: 210px;
                 }
 
                 @media (min-width: 480px) {
-                    width: 345px;
+                    width: 225px;
                 }
 
                 @media (min-width: 1280px) {
-                    width: 420px;
+                    width: 265px;
                 }
 
                 @media (min-width: 1400px) {
-                    width: 490px;
+                    width: 320px;
+                }
+            }
+
+            .title {
+                color: #000000;
+                position: absolute;
+                top: 168px;
+                right: -40px;
+                height: 200px;
+                width: 320px;
+                font-size: 50px;
+                font-style: italic;
+                line-height: 48px;
+
+                @media (min-width: 360px) {
+                    top: 136px;
+                    right: 0;
+                    font-size: 55px;
+                    line-height: 52px;
+                }
+
+                @media (min-width: 480px) {
+                    top: 111px;
+                    right: 60px;
+                    font-size: 57px;
+                    line-height: 55px
+                }
+
+                @media (min-width: 1280px) {
+                    top: 110px;
+                    right: 150px;
+                    font-size: 70px;
+                    line-height: 66px
+                }
+
+                @media (min-width: 1400px) {
+                    top: 163px;
+                    right: 280px;
+                    font-size: 82px;
+                    line-height: 79px
+                }
+
+                .black {
+                    font-weight: 900;
+                }
+
+                .light {
+                    font-weight: 400;
                 }
             }
 

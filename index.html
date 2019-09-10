@@ -2,7 +2,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32">        
+        <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32">
+        <!--https://michalsnik.github.io/aos/-->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link href="./css/home.css" rel="stylesheet">
         <title>SrBurns</title>
     </head>
@@ -18,9 +20,14 @@
         </header>
 
         <div class="main-container">
-            <div class="main-container__agency-block">
+            <div data-aos="fade-up" class="main-container__agency-block">
                 <div class="main-container__agency-block__first">
-                    <img width="300" src="./img/keko-rojo.jpg" alt="">
+                    <img class="keko-rojo" width="195" src="./img/keko-rojo-solo.png" alt="">
+
+                    <h1 id="titleRandom" class="title">
+                        <div class="black">SOMOS<br/>MÁS</div>
+                        <div class="light">QUE<br/>IDEAS</div>
+                    </h1>
 
                     <div class="main-container__agency-block__first__typing typewrite" data-period="3000" data-type='["Actualmente trabajamos con <b>Entel</b>", "Actualmente trabajamos con <b>Samsung</b>", "Actualmente trabajamos con <b>Laive</b>"]'>
                         <span class="wrap"></span>
@@ -66,7 +73,7 @@
                 </div>
             </div>
 
-            <div class="main-container__what-we-do">
+            <div data-aos="fade-down" class="main-container__what-we-do">
                 <div class="main-container__what-we-do__container">
                     <img class="text-img" width="254" src="./img/texto-what-we-do.png" alt="">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -112,7 +119,7 @@
                 </div>
             </div>
 
-            <div class="main-container__projects">
+            <div data-aos="fade-up" class="main-container__projects">
                 <h3>Let's See</h3>
                 <h2>Projects</h2>                
 
@@ -519,7 +526,7 @@
                 </div>
             </div>
 
-            <div class="main-container__brands">
+            <div data-aos="fade-up" class="main-container__brands">
                 <div class="main-container__brands__circle">
                     <h3>Let's Work</h3>
                     <h2>Brands</h2>
@@ -539,9 +546,11 @@
                         <img src="./img/brand-entel.png" alt="">
                         <img src="./img/brand-fruna.png" alt="">
                         <img src="./img/brand-laive.png" alt="">
+                    </div>
+
+                    <div class="main-container__brands__slider__item">
                         <img src="./img/brand-lap.png" alt="">
                         <img src="./img/brand-lecordonbleu.png" alt="">
-                        <img src="./img/brand-mall-aventura.png" alt="">
                         <img src="./img/brand-ripley.png" alt="">
                         <img src="./img/brand-siderperu.png" alt="">
                     </div>
@@ -551,11 +560,13 @@
                         <img src="./img/brand-vizzio.png" alt="">
                         <img src="./img/brand-ambrosoli.png" alt="">
                         <img src="./img/brand-laive.png" alt="">
+                    </div>
+
+                    <div class="main-container__brands__slider__item">
                         <img src="./img/brand-lap.png" alt="">
                         <img src="./img/brand-lecordonbleu.png" alt="">
                         <img src="./img/brand-mall-aventura.png" alt="">
                         <img src="./img/brand-ripley.png" alt="">
-                        <img src="./img/brand-siderperu.png" alt="">
                     </div>
 
                     <div class="main-container__brands__slider__item">
@@ -563,11 +574,13 @@
                         <img src="./img/brand-vizzio.png" alt="">
                         <img src="./img/brand-ambrosoli.png" alt="">
                         <img src="./img/brand-laive.png" alt="">
+                    </div>
+
+                    <div class="main-container__brands__slider__item">
                         <img src="./img/brand-lap.png" alt="">
                         <img src="./img/brand-lecordonbleu.png" alt="">
                         <img src="./img/brand-mall-aventura.png" alt="">
                         <img src="./img/brand-ripley.png" alt="">
-                        <img src="./img/brand-siderperu.png" alt="">
                     </div>
 
                     <div class="main-container__brands__slider__item">
@@ -575,16 +588,11 @@
                         <img src="./img/brand-vizzio.png" alt="">
                         <img src="./img/brand-ambrosoli.png" alt="">
                         <img src="./img/brand-laive.png" alt="">
-                        <img src="./img/brand-lap.png" alt="">
-                        <img src="./img/brand-lecordonbleu.png" alt="">
-                        <img src="./img/brand-mall-aventura.png" alt="">
-                        <img src="./img/brand-ripley.png" alt="">
-                        <img src="./img/brand-siderperu.png" alt="">
                     </div>
                 </div>
             </div>
 
-            <div class="main-container__our-team">
+            <div data-aos="fade-up" class="main-container__our-team">
                 <div class="main-container__our-team__title">
                     <h3>Let's Fun</h3>
                     <h2>Our Team</h2>
@@ -634,7 +642,7 @@
                 </div>
             </div>
 
-            <div class="main-container__contact">
+            <div data-aos="fade-down" class="main-container__contact">
                 <div class="main-container__contact__container">
                     <div class="main-container__contact__container__fondo">
                         <img width="160" src="./img/contact-text.png" alt="">
@@ -691,6 +699,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="./js/slick.min.js" type="text/javascript"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="./js/jquery.validate.min.js"></script>
         <script src="./js/home.js" type="text/javascript"></script>
     </body>

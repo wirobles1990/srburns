@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+    AOS.init()
     
     setBodyHeight()
 
@@ -19,6 +21,8 @@ $(document).ready(function(){
     randomPhotos()
 
     validateForm()
+
+    randomText()
 
     window.addEventListener('resize', function () {
         setBodyHeight()
@@ -89,16 +93,16 @@ function loadSliders () {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     autoplay: false,
-                    dots: true,
+                    dots: true
                 }
             },
             {
-                breakpoint: 1365,
+                breakpoint: 1023,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
                     autoplay: false,
-                    dots: true,
+                    dots: true
                 }
             }
         ]
@@ -345,6 +349,18 @@ function interactionScroll () {
     }
 }
 
+function randomText () {
+    let min = 1,
+        max = 4,
+        arrayText = ['<div class="black">SOMOS<br/>MÁS</div><div class="light">QUE<br/>IDEAS</div>',
+            '<div class="black">SIN<br/>DIVERSIÓN</div><div class="light">NO HAY<br/>IDEAS</div>',
+            '<div class="black">SOMOS<br/>MÁS</div><div class="light">QUE<br/>IDEAS</div>',
+            '<div class="black">SIN<br/>DIVERSIÓN</div><div class="light">NO HAY<br/>IDEAS</div>']
+
+    $('#titleRandom').html(arrayText[Math.floor(Math.random() * max) + min])
+}
+
+/*-------------Type Writer-------------*/
 let TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate
     this.el = el
@@ -398,13 +414,14 @@ function loadTypewriter () {
           new TxtType(elements[i], JSON.parse(toRotate), period)
         }
     }
-    // INJECT CSS
+    // inject css
     let css = document.createElement('style')
     css.type = 'text/css'
     css.innerHTML = '.typewrite > .wrap { border-right: 0.08em solid #fff}'
     document.body.appendChild(css)
 }
 
+/*------------Validate Form------------*/
 function validateForm () {    
     $( 'input[name="phone"]' ).keypress(isNumberKey);
 
