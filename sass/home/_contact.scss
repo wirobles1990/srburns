@@ -50,7 +50,7 @@
                 &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
                     color: #010103;
                     font-style: italic;
-                    opacity: 1; /* Firefox */
+                    opacity: 1;
                     font-size: 12px;
                 }
                 &:-ms-input-placeholder { /* Internet Explorer 10-11 */
@@ -198,7 +198,12 @@
                 }
 
                 img {
-                    margin-top: -14px;
+                    margin-top: -50px;
+                }
+
+                button {
+                    float: right;
+                    margin-right: 70px;
                 }
             }
 
@@ -209,6 +214,10 @@
 
                 div {
                     width: 300px !important;
+                }
+
+                button {
+                    margin-right: 35px;
                 }
             }
         }

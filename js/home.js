@@ -160,27 +160,25 @@ function unloadSliders () {
 }
 
 function randomPhotos () {
-    let min = 1,
-        max = 4,        
-        index = 1,
-        maxLoop = 0
+    let maxPhotos = 4,
+        maxLayout = 0
 
     if ( document.body.clientWidth < 768 ) {
         //9 photos to show
-        maxLoop = 9
+        maxLayout = 9
 
         $('.main-container__our-team__photos > div:nth-child(7)').css('opacity','0')        
 
     } else if ( document.body.clientWidth >= 768 && document.body.clientWidth <= 1024 ) {
         //12 photos to show
-        maxLoop = 12
+        maxLayout = 12
         
         $('.main-container__our-team__photos > div:nth-child(2)').css('opacity','0')
         $('.main-container__our-team__photos > div:nth-child(9)').css('opacity','0')
 
     } else if ( document.body.clientWidth > 1024 ) {
         //40 photos to show
-        maxLoop = 40
+        maxLayout = 40
 
         $('.main-container__our-team__photos > div:nth-child(2)').css('opacity','0')
         $('.main-container__our-team__photos > div:nth-child(9)').css('opacity','0')
@@ -190,15 +188,13 @@ function randomPhotos () {
     }
 
     setInterval(function(){
-        if ( index === maxLoop ) {
-            index = 1
-        }        
-
-        $('.main-container__our-team__photos > div:nth-child(' + index + ')').each(function() {
-            $(this).css('background-image','url("./img/team-' + (Math.floor(Math.random() * max) + min) + '.jpg")')
+        $('.main-container__our-team__photos > div:nth-child(' + (Math.floor(Math.random() * maxLayout) + 1) + ')').each(function() {
+            $(this).css('background-image','url("./img/team-' + (Math.floor(Math.random() * maxPhotos) + 1) + '.jpg")')
         })
 
-        index++
+        $('.main-container__our-team__photos > div:nth-child(' + (Math.floor(Math.random() * maxLayout) + 1) + ')').each(function() {
+            $(this).css('background-image','url("./img/team-' + (Math.floor(Math.random() * maxPhotos) + 1) + '.jpg")')
+        })
     }, 200)
 }
 
@@ -396,7 +392,7 @@ TxtType.prototype.tick = function() {
     } else if (this.isDeleting && this.txt === '') {
         this.isDeleting = false
         this.loopNum++
-        delta = 500
+        delta = 100
     }
 
     setTimeout(function() {
